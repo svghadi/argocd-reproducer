@@ -4,7 +4,7 @@ metadata:
   name: my-secret
   annotations:
     openshift.io/token-secret.value: token
-    api-key: new-secret
+    api-key: secret
     app: test
 type: Opaque
 
