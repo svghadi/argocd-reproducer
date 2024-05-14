@@ -3,18 +3,7 @@ kind: Secret
 metadata:
   name: my-secret
   annotations:
-    token: "secret"
+    token: true
     app: test
 type: Opaque
----
-apiVersion: v1
-kind: Pod
-metadata:
-  name: my-pod
-  annotations:
-    token: "secret"
-    app: test
-spec:
-  containers:
-  - name: my-container
-    image: nginx
+
