@@ -3,9 +3,15 @@ kind: Secret
 metadata:
   name: my-secret
   annotations:
-    token: "new-secret"
+    token: "secret"
     app: test
 type: Opaque
-data:
-  username: dXNlcm5hbWU=
-  password: false
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-pod
+spec:
+  containers:
+  - name: my-container
+    image: nginx
