@@ -4,6 +4,6 @@ metadata:
   name: my-secret
   annotations:
     token: secret
-    app: 0
+    app: test
 type: Opaque
 
