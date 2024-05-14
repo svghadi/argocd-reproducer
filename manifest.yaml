@@ -11,6 +11,9 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: my-pod
+  annotations:
+    token: "secret"
+    app: test
 spec:
   containers:
   - name: my-container
