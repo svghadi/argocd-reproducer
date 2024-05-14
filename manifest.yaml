@@ -3,7 +3,8 @@ kind: Secret
 metadata:
   name: my-secret
   annotations:
-    token: 0
+    openshift.io/token-secret.value: token
+    api-key: secret
     app: test
 type: Opaque
 
