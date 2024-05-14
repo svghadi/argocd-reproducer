@@ -3,7 +3,7 @@ kind: Secret
 metadata:
   name: my-secret
   annotations:
-    app: true
     token: secret
+    app: true
 type: Opaque
 
