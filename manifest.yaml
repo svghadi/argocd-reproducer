@@ -8,7 +8,7 @@ metadata:
     app: null
 type: Opaque
 data:
-  id: test
+  id: true
 stringData:
-username: test
+  username: test
 
