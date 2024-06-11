@@ -10,5 +10,5 @@ type: Opaque
 data:
   id: test
 stringData:
-username: test
+  username: 1
 
