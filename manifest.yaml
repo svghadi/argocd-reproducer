@@ -3,6 +3,10 @@ kind: Pod
 metadata:
   name: pod1
 spec:
+  initContainers:
+  - name: delay-startup
+    image: public.ecr.aws/docker/library/alpine
+    command: ['sleep', '30']
   containers:
   - name: container1
     image: public.ecr.aws/docker/library/alpine
