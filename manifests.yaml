@@ -6,4 +6,5 @@ type: Opaque
 data:
   username: dXNlcm5hbWU=
   password: dXNlcm5hbWU=
-stringData: {}
+stringData:
+  bu: true
