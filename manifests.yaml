@@ -3,5 +3,7 @@ kind: Secret
 metadata:
   name: my-secret
 type: Opaque
-data: {}
-stringData: {}
+data:
+  username: dmFsdWU=
+stringData: 
+  password: value
