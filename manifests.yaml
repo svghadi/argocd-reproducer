@@ -5,6 +5,6 @@ metadata:
 type: Opaque
 data:
   username: dXNlcm5hbWU=
-  password: dXNlcm5hbWU=
+  password: true
 stringData:
-  bu: true
+  bu: bu
