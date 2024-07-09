@@ -7,8 +7,6 @@ metadata:
     api-key: "null"
     app: null
 type: Opaque
-data:
-  id: test
 stringData:
-  username: 1
+  username: username
 
