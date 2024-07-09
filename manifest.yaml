@@ -6,8 +6,26 @@ metadata:
     openshift.io/token-secret.value: secret
     api: key
     app: "null"
-    timestamp: null
+    #timestamp: null
 type: Opaque
 stringData:
   username: username
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod1
+  annotations:
+    openshift.io/token-secret.value: secret
+    api: key
+    app: "null"
+    #timestamp: null
+spec:
+  containers:
+  - name: container1
+    image: public.ecr.aws/docker/library/alpine
+    command: ["sleep"]
+    args:
+    - 10h
+
 
