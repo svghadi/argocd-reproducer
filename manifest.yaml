@@ -6,7 +6,7 @@ metadata:
     openshift.io/token-secret.value: secret
     api: key
     app: "null"
-    timestamp: null
+    timestamp: true
 type: Opaque
 stringData:
   username: username
