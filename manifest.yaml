@@ -4,6 +4,8 @@ metadata:
   name: my-secret
   annotations:
     openshift.io/token-secret.value: secret
+    api: key
+    app: "null"
 type: Opaque
 stringData:
   username: username
