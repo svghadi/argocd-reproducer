@@ -1,0 +1,8 @@
+apiVersion: user.openshift.io/v1
+kind: UserIdentityMapping
+metadata:
+  name: allow_all:dxiadmin
+user:
+  name: dxiadmin
+identity:
+  name: allow_all:dxiadmin
