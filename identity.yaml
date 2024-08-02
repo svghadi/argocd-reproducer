@@ -4,5 +4,3 @@ metadata:
   name: allow_all:dxiadmin
 providerName: allow_all
 providerUserName: dxiadmin
-user:
-  name: dxiadmin
