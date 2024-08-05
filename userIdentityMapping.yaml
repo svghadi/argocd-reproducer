@@ -2,6 +2,8 @@ apiVersion: user.openshift.io/v1
 kind: UserIdentityMapping
 metadata:
   name: allow_all:dxiadmin
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"
 user:
   name: dxiadmin
 identity:
