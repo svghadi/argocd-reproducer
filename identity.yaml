@@ -2,5 +2,7 @@ apiVersion: user.openshift.io/v1
 kind: Identity
 metadata:
   name: allow_all:dxiadmin
+  annotations:
+    argocd.argoproj.io/sync-wave: "0"
 providerName: allow_all
 providerUserName: dxiadmin
