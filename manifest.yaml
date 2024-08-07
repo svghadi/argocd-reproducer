@@ -1,43 +1,14 @@
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: example
+  name: test-volume
+  labels:
+    type: local
 spec:
+  storageClassName: manual
   capacity:
-    storage: 2Gi
+    storage: 10Gi
   accessModes:
-    - ReadOnlyMany
-  persistentVolumeReclaimPolicy: Retain
-  storageClassName: manual
-  nfs:
-    server: SOME_NFS_SERVER
-    path: /example
----
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: example-pvc
-spec:
-  accessModes:
-    - ReadOnlyMany
-  resources:
-    requests:
-      storage: 2Gi
-  storageClassName: manual
-  volumeName: example
----
-apiVersion: v1
-kind: Pod
-metadata:
-  name: example-pod
-spec:
-  containers:
-  - name: example-container
-    image: nginx:latest
-    volumeMounts:
-    - mountPath: /mnt/example
-      name: example-volume
-  volumes:
-  - name: example-volume
-    persistentVolumeClaim:
-      claimName: example-pvc
+    - ReadWriteOnce
+  hostPath:
+    path: "/mnt/data" 
