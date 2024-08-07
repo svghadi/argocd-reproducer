@@ -4,6 +4,7 @@ metadata:
   name: allow_all:dxiadmin
   annotations:
     argocd.argoproj.io/sync-wave: "1"
+    argocd.argoproj.io/sync-options: Replace=true
 user:
   name: dxiadmin
 identity:
