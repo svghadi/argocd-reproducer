@@ -28,5 +28,16 @@ spec:
     command: ["sleep"]
     args:
     - 10h
-
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: secret
+  annotations:
+    token: TOPSECRET
+	app: test
+stringData:
+  username: TOPSECRET
+data:
+  password: VE9QU0VDUkVU
 
