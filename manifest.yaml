@@ -35,7 +35,7 @@ metadata:
   name: secret
   annotations:
     token: TOPSECRET
-	app: test
+    app: test
 stringData:
   username: TOPSECRET
 data:
