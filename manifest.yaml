@@ -4,6 +4,7 @@ metadata:
   name: secret
   annotations:
     token: key
+    api-key: key
     app: test
 type: Opaque
 stringData:
