@@ -10,7 +10,7 @@ metadata:
     #timestamp: null
 type: Opaque
 stringData:
-  username: username
+  username: username-new
 ---
 apiVersion: v1
 kind: Pod
