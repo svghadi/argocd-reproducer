@@ -3,7 +3,7 @@ kind: Secret
 metadata:
   name: secret
   annotations:
-    api: key
+    token: key
     app: test
 type: Opaque
 stringData:
