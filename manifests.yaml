@@ -6,6 +6,3 @@ type: Opaque
 data: 
   password: dmFsdWU=
   username: dmFsdWU=
-  admin: null
-stringData: 
-  id: null
