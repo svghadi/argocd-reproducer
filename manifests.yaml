@@ -28,7 +28,6 @@ apiVersion: maistra.io/v2
 kind: ServiceMeshControlPlane
 metadata:
   name: istio-system
-  namespace: openshift-gitops
 spec:
   tracing:
     sampling: 10000
