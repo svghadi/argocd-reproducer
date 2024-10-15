@@ -1,12 +1,23 @@
-apiVersion: operators.coreos.com/v1alpha1
-kind: Subscription
+apiVersion: v1
+kind: Pod
 metadata:
-  name: servicemeshoperator
-  annotations:
-    argocd.argoproj.io/sync-wave: "0"
+  name: pod1
 spec:
-  channel: stable
-  installPlanApproval: Automatic
-  name: servicemeshoperator
-  source: redhat-operators
-  sourceNamespace: openshift-marketplace
+  containers:
+  - name: container1
+    image: public.ecr.aws/docker/library/alpine
+    command: ["sleep"]
+    args:
+    - 10h
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod2
+spec:
+  containers:
+  - name: container2
+    image: public.ecr.aws/docker/library/alpine
+    command: ["sleep"]
+    args:
+    - 10h
