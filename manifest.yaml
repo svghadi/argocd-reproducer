@@ -5,7 +5,7 @@ metadata:
   annotations:
     token: new-key
     api-key: key
-    app: test
+    app: 12345
 type: Opaque
 stringData:
   username: username
