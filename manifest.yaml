@@ -6,4 +6,4 @@ type: Opaque
 data:
   correct: 1
 stringData:
-  correctstr: correctstr
+  correctstr: correct
