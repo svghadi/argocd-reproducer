@@ -5,6 +5,5 @@ metadata:
 type: Opaque
 data:
   correct: Y29ycmVjdA==
-  new: Y29ycmVjdA==
 stringData:
   test: correct
