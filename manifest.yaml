@@ -6,4 +6,4 @@ type: Opaque
 data:
   correct: Y29ycmVjdA==
 stringData:
-  1: correct
+  test: correct
