@@ -3,6 +3,7 @@ kind: Secret
 metadata:
   name: secret
 type: Opaque
-stringData:
+data:
   correct: correct
+stringData:
   correctstr: correctstr
