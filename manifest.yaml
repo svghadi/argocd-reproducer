@@ -4,6 +4,6 @@ metadata:
   name: secret
 type: Opaque
 data:
-  correct: 1
+  correct: Y29ycmVjdA==
 stringData:
-  correctstr: correct
+  1: correct
