@@ -1,25 +1,21 @@
-apiVersion: v1
-kind: Pod
+apiVersion: apps/v1
+kind: Deployment
 metadata:
-  name: pod1
-  labels:
-    app: test
+  name: alpine-deployment
 spec:
-  containers:
-  - name: container1
-    image: public.ecr.aws/docker/library/alpine:l
-    command: ["sleep"]
-    args:
-    - 10h
----
-apiVersion: v1
-kind: Pod
-metadata:
-  name: pod2
-spec:
-  containers:
-  - name: container2
-    image: public.ecr.aws/docker/library/alpine
-    command: ["sleep"]
-    args:
-    - 10h
+  replicas: 1
+  selector:
+    matchLabels:
+      app: alpine
+  template:
+    metadata:
+      labels:
+        app: alpine
+    spec:
+      containers:
+      - name: alpine
+        image: alpine:latest
+        command: ["sleep"]
+        args:
+        - 10h
+
