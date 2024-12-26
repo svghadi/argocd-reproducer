@@ -7,7 +7,7 @@ metadata:
 spec:
   containers:
   - name: container1
-    image: public.ecr.aws/docker/library/alpine:rt
+    image: public.ecr.aws/docker/library/alpine
     command: ["sleep"]
     args:
     - 10h
