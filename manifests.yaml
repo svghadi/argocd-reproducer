@@ -10,7 +10,7 @@ spec:
   template:
     metadata:
       labels:
-        app: alpin
+        app: alpine
     spec:
       containers:
       - name: alpine
