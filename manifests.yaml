@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: alpine
-        image: alpine:latest
+        image: alpine:lates
         command: ["sleep"]
         args:
         - 10h
