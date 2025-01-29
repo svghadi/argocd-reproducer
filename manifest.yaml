@@ -4,6 +4,6 @@ metadata:
   name: secret
 type: Opaque
 data:
-  correct: 1
+  correct: dsidsa
 stringData:
-  test: m
+  test: true
