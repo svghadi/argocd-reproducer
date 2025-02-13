@@ -2,6 +2,10 @@ apiVersion: v1
 kind: Secret
 metadata:
   name: secret
+  annotations:
+    api-key: secret
+    openshift.io/token-secret.value: another-secret
+    app: test
 type: Opaque
 stringData:
-  test: true
+  test: "true"
