@@ -25,6 +25,7 @@ metadata:
   name: post-delete-secret
   annotations:
     argocd.argoproj.io/hook: PostDelete
+    argocd.argoproj.io/hook-delete-policy: BeforeHookCreation
 type: Opaque
 data: {}
   #correct: Y29ycmVjdA==
