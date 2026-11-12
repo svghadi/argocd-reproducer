@@ -41,3 +41,72 @@ spec:
   ports:
     - port: 8080
       targetPort: 8080
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend
+spec:
+  replicas: 1
+  progressDeadlineSeconds: 60
+  selector:
+    matchLabels:
+      app: frontend
+  template:
+    metadata:
+      labels:
+        app: frontend
+    spec:
+      containers:
+        - name: frontend
+          image: python:3.12-alpine
+          command:
+            - python
+            - -u
+            - -c
+            - |
+              import time
+              import urllib.request
+
+              url = "http://backend:8080"
+
+              while True:
+                  try:
+                      with urllib.request.urlopen(
+                          url, timeout=3
+                      ) as response:
+                          print(
+                              "Backend status:",
+                              response.status,
+                              flush=True
+                          )
+                  except Exception as e:
+                      print(
+                          "Backend connection failed:",
+                          e,
+                          flush=True
+                      )
+
+                  time.sleep(5)
+          readinessProbe:
+            exec:
+              command:
+                - python
+                - -c
+                - |
+                  import urllib.request
+                  urllib.request.urlopen(
+                      "http://backend:8080",
+                      timeout=2
+                  )
+            initialDelaySeconds: 5
+            periodSeconds: 5
+            failureThreshold: 2
+          resources:
+            requests:
+              memory: 32Mi
+              cpu: 10m
+            limits:
+              memory: 128Mi
+              cpu: 100m
