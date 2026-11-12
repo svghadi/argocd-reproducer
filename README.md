@@ -1,5 +1,26 @@
-# argocd-reproducer
-Examples to reproduce Argo CD bugs
+## Application
+
+```yaml
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: oom-test
+  namespace: openshift-gitops
+spec:
+  destination:
+    namespace: openshift-gitops
+    server: 'https://kubernetes.default.svc'
+  project: default
+  source:
+    path: ./
+    repoURL: 'https://github.com/svghadi/argocd-reproducer.git'
+    targetRevision: oom
+  syncPolicy:
+    automated:
+      enabled: true
+      prune: false
+      selfHeal: false
+```
 
 ## Resources Update
 
