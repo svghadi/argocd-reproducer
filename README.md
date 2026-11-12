@@ -1,5 +1,26 @@
-# argocd-reproducer
-Examples to reproduce Argo CD bugs
+## Application
+
+```yaml
+
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: db
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/svghadi/argocd-reproducer.git
+    targetRevision: HEAD
+    path: missing-configmap
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: openshift-gitops
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+```
+
 
 ## Missing configmap
 
