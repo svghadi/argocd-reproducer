@@ -37,7 +37,7 @@ metadata:
   name: backend
 spec:
   selector:
-    app: backend-v2  # Intentional mistake
+    app: backend-v2 
   ports:
     - port: 8080
       targetPort: 8080
