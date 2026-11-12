@@ -11,8 +11,8 @@ spec:
   project: default
   source:
     repoURL: https://github.com/svghadi/argocd-reproducer.git
-    targetRevision: HEAD
-    path: missing-configmap
+    targetRevision: missing-configmap
+    path: ./
   destination:
     server: https://kubernetes.default.svc
     namespace: openshift-gitops
