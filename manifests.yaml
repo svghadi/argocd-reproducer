@@ -1,23 +1,43 @@
-apiVersion: v1
-kind: Pod
+
+apiVersion: apps/v1
+kind: Deployment
 metadata:
-  name: pod1
+  name: backend
 spec:
-  containers:
-  - name: container1
-    image: public.ecr.aws/docker/library/alpine
-    command: ["sleep"]
-    args:
-    - 10h
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+        - name: backend
+          image: python:3.12-alpine
+          command:
+            - python
+            - -m
+            - http.server
+            - "8080"
+          ports:
+            - containerPort: 8080
+          resources:
+            requests:
+              memory: 32Mi
+              cpu: 10m
+            limits:
+              memory: 128Mi
+              cpu: 100m
 ---
 apiVersion: v1
-kind: Pod
+kind: Service
 metadata:
-  name: pod2
+  name: backend
 spec:
-  containers:
-  - name: container2
-    image: public.ecr.aws/docker/library/alpine
-    command: ["sleep"]
-    args:
-    - 10h
+  selector:
+    app: backend-v2  # Intentional mistake
+  ports:
+    - port: 8080
+      targetPort: 8080
