@@ -1,23 +1,40 @@
-apiVersion: v1
-kind: Pod
+
+apiVersion: apps/v1
+kind: Deployment
 metadata:
-  name: pod1
+  name: oom-test
+  namespace: gitops-ai-test
 spec:
-  containers:
-  - name: container1
-    image: public.ecr.aws/docker/library/alpine
-    command: ["sleep"]
-    args:
-    - 10h
----
-apiVersion: v1
-kind: Pod
-metadata:
-  name: pod2
-spec:
-  containers:
-  - name: container2
-    image: public.ecr.aws/docker/library/alpine
-    command: ["sleep"]
-    args:
-    - 10h
+  replicas: 1
+  progressDeadlineSeconds: 60
+  selector:
+    matchLabels:
+      app: oom-test
+  template:
+    metadata:
+      labels:
+        app: oom-test
+    spec:
+      containers:
+        - name: memory-hog
+          image: python:3.12-alpine
+          command:
+            - python
+            - -u
+            - -c
+            - |
+              import time
+
+              print("Allocating 128 MiB...")
+              data = bytearray(128 * 1024 * 1024)
+              print("Memory allocated successfully")
+
+              while True:
+                  time.sleep(60)
+          resources:
+            requests:
+              memory: 16Mi
+              cpu: 10m
+            limits:
+              memory: 48Mi
+              cpu: 100m
