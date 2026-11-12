@@ -10,7 +10,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/YOUR_ORG/YOUR_REPO.git
+    repoURL: https://github.com/svghadi/argocd-reproducer.git
     targetRevision: label-mismatch
     path: ./
   destination:
