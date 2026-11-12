@@ -6,6 +6,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: db
+  namespace: openshift-gitops
 spec:
   project: default
   source:
